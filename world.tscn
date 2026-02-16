@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkvcno2k442a6"]
+
+[ext_resource type="PackedScene" uid="uid://djecfjb5wt7sf" path="res://bird.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://ddnifn0cphh3u" path="res://world.gd" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://k2forc0hiyjg" path="res://camera_2d.gd" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bdcglf40u43lp" path="res://kill_zone.tscn" id="4_aqk2v"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tlwt5"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqk2v"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_fj7yv")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1080, 0)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 1080.0
+offset_bottom = 720.0
+color = Color(0, 0.70980394, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 490.0
+offset_top = 310.0
+offset_right = 590.0
+offset_bottom = 410.0
+color = Color(1, 0.75686276, 0, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_tlwt5")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+position = Vector2(0, 720)
+shape = SubResource("WorldBoundaryShape2D_aqk2v")
+
+[node name="Bird" parent="." instance=ExtResource("1_f3sb7")]
+position = Vector2(100, 360)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+position = Vector2(540, 360)
+script = ExtResource("3_tlwt5")
+target = NodePath("../Bird")
+
+[node name="KillZone" parent="." instance=ExtResource("4_aqk2v")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="KillZone"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="KillZone/ParallaxBackground"]
+motion_mirroring = Vector2(1080, 0)
+
+[node name="ColorRect" type="ColorRect" parent="KillZone/ParallaxBackground/ParallaxLayer"]
+offset_right = 1080.0
+offset_bottom = 205.0
+color = Color(0.5411765, 0.84313726, 1, 1)
+
+[node name="KillZone2" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(1080, 720)
+rotation = 3.1415927
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1080, 0)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground2/ParallaxLayer"]
+offset_top = 515.0
+offset_right = 1080.0
+offset_bottom = 720.0
+color = Color(0, 0.43137255, 1, 1)
+
+[connection signal="died" from="KillZone" to="." method="_on_kill_zone_died"]
+[connection signal="died" from="KillZone2" to="." method="_on_kill_zone_2_died"]
