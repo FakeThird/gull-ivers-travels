@@ -1,0 +1,130 @@
+[gd_scene load_steps=21 format=3 uid="uid://djecfjb5wt7sf"]
+
+[ext_resource type="Script" uid="uid://bo2ympl4xpqc" path="res://player.gd" id="1_g5k2s"]
+[ext_resource type="PackedScene" uid="uid://bq7mqkahs0axd" path="res://movement_component.tscn" id="2_sweqy"]
+[ext_resource type="Resource" uid="uid://bi5eyb4uavcrs" path="res://player_stats.tres" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://by8vebje7wia3" path="res://assets/seagull/death/0.png" id="3_606se"]
+[ext_resource type="PackedScene" uid="uid://c27pmruuujkpx" path="res://stamina_component.tscn" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://j328llyucu6t" path="res://assets/seagull/death/1.png" id="4_u1c27"]
+[ext_resource type="PackedScene" uid="uid://bokyvhyk64ham" path="res://weight_component.tscn" id="5_dw050"]
+[ext_resource type="Texture2D" uid="uid://dtkc75or24fy3" path="res://assets/seagull/death/2.png" id="5_op7ga"]
+[ext_resource type="Texture2D" uid="uid://dsbj4yn7icvp2" path="res://assets/seagull/death/3.png" id="6_q13i1"]
+[ext_resource type="Texture2D" uid="uid://bu4usy35a3o10" path="res://assets/seagull/death/4.png" id="7_pylmc"]
+[ext_resource type="Texture2D" uid="uid://cvvr5t6qvskko" path="res://assets/seagull/death/5.png" id="8_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://bd71yduul1esx" path="res://assets/seagull/flap/0.PNG" id="9_5tmop"]
+[ext_resource type="Texture2D" uid="uid://da2qetjtkp7vr" path="res://assets/seagull/flap/1.PNG" id="10_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://dprhkv4r2kevt" path="res://assets/seagull/flap/2.PNG" id="11_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://ttkhd6stiqfu" path="res://assets/seagull/flap/3.PNG" id="12_dx0e4"]
+[ext_resource type="AudioStream" uid="uid://drm6ir4b20grf" path="res://assets/audio/wingsflapping.wav" id="13_op7ga"]
+[ext_resource type="AudioStream" uid="uid://bv0ai24jjic35" path="res://assets/audio/seagull.wav" id="14_q13i1"]
+[ext_resource type="PackedScene" uid="uid://bobtordbcjnmb" path="res://animation_component.tscn" id="18_q13i1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jm5j8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pbfsw")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pbfsw")
+}],
+"loop": false,
+"name": &"die",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5tmop")
+}],
+"loop": false,
+"name": &"dive",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dx0e4")
+}],
+"loop": false,
+"name": &"flap",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owhn0"]
+radius = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 14
+script = ExtResource("1_g5k2s")
+stats = ExtResource("3_2hs0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_jm5j8")
+animation = &"dead"
+autoplay = "flap"
+
+[node name="AudioSet" type="Node2D" parent="."]
+
+[node name="WingFlap" type="AudioStreamPlayer2D" parent="AudioSet"]
+stream = ExtResource("13_op7ga")
+
+[node name="DeathCry" type="AudioStreamPlayer2D" parent="AudioSet"]
+stream = ExtResource("14_q13i1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_owhn0")
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_sweqy")]
+stats = ExtResource("3_2hs0m")
+
+[node name="StaminaComponent" parent="." instance=ExtResource("4_1jxqw")]
+stats = ExtResource("3_2hs0m")
+
+[node name="WeightComponent" parent="." instance=ExtResource("5_dw050")]
+stats = ExtResource("3_2hs0m")
+shed_rate = 0.3
+
+[node name="AnimationComponent" parent="." node_paths=PackedStringArray("sprite", "flap_sound", "death_sound") instance=ExtResource("18_q13i1")]
+sprite = NodePath("../AnimatedSprite2D")
+flap_sound = NodePath("../AudioSet/WingFlap")
+death_sound = NodePath("../AudioSet/DeathCry")
+
+[connection signal="flap_performed" from="MovementComponent" to="." method="_on_flap_performed"]

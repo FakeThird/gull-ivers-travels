@@ -1,61 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://oo05xdye4s6t"]
+[gd_scene load_steps=7 format=3 uid="uid://oo05xdye4s6t"]
 
-[ext_resource type="FontFile" uid="uid://bp2e3pw8mp4rg" path="res://font/Pixellari.ttf" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://ccp68wpm6jlts" path="res://assets/font/Pixellari.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://cgwd27w5nddx2" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="Script" uid="uid://4duau1en7jqo" path="res://distance.gd" id="3_8sq4i"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_37p78"]
+[sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
 font = ExtResource("1_37p78")
 font_size = 32
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
+[sub_resource type="LabelSettings" id="LabelSettings_8sq4i"]
 font = ExtResource("1_37p78")
 font_size = 48
 font_color = Color(1, 0.8039216, 0.2901961, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_8sq4i"]
-
-[sub_resource type="Animation" id="Animation_640wx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_8sq4i"]
-resource_name = "flicker"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a2258"]
-_data = {
-&"RESET": SubResource("Animation_640wx"),
-&"flicker": SubResource("Animation_8sq4i")
-}
+[sub_resource type="LabelSettings" id="LabelSettings_640wx"]
+font = ExtResource("1_37p78")
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_64ctp")
@@ -63,11 +29,11 @@ script = ExtResource("1_64ctp")
 [node name="Distance" type="Label" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 80.0
-offset_bottom = 112.0
+offset_top = 10.0
+offset_bottom = 42.0
 grow_horizontal = 2
-text = "0 m"
-label_settings = SubResource("LabelSettings_37p78")
+text = "0m"
+label_settings = SubResource("LabelSettings_64ctp")
 horizontal_alignment = 1
 script = ExtResource("3_8sq4i")
 
@@ -76,41 +42,23 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+offset_top = -24.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Gull Iver’s Travels"
-label_settings = SubResource("LabelSettings_64ctp")
+text = "Gull Iver's Travels"
+label_settings = SubResource("LabelSettings_8sq4i")
 horizontal_alignment = 1
 
-[node name="Message" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="StartButton" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
+[node name="Caption" type="Label" parent="."]
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -80.5
 offset_top = 30.0
-offset_right = 80.5
-offset_bottom = 61.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_37p78")
-theme_override_font_sizes/font_size = 24
-button_group = SubResource("ButtonGroup_8sq4i")
-text = "Press Space to Start"
-flat = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="StartButton"]
-libraries = {
-&"": SubResource("AnimationLibrary_a2258")
-}
-autoplay = "flicker"
-speed_scale = 2.0
+text = "Press [Space] to Start"
+label_settings = SubResource("LabelSettings_640wx")
+horizontal_alignment = 1

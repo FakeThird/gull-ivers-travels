@@ -1,21 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdcglf40u43lp"]
+[gd_scene load_steps=3 format=3 uid="uid://3gw0yro342k8"]
 
-[ext_resource type="Script" uid="uid://b3tauqilpfh6c" path="res://kill_zone.gd" id="1_tuh0n"]
+[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="1_tuh0n"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tuh0n"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aceia"]
 
-[node name="KillZone" type="Area2D"]
-script = ExtResource("1_tuh0n")
+[node name="KillZone" type="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(540, 205)
-rotation = 3.1415927
-shape = SubResource("WorldBoundaryShape2D_tuh0n")
+[node name="Parallax2D" type="Parallax2D" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
+[node name="KillArea" parent="." instance=ExtResource("1_tuh0n")]
+wait_time = 1.5
+reason = "Kill Zone"
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape2D" parent="KillArea" index="0"]
+shape = SubResource("WorldBoundaryShape2D_aceia")
+
+[editable path="KillArea"]

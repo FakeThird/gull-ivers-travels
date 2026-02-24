@@ -1,27 +1,31 @@
 extends Node2D
+class_name World
 
-@onready var bird = $Bird
-@onready var distance = $HUD/Distance
+@onready var player = $Player
+@onready var spawner = $FollowCamera/Spawner
 @onready var hud = $HUD
+@onready var distance = $HUD/Distance
 
 func _ready() -> void:
-	$OceanSounds.play()
+	GameEvents.player_killed.connect(_on_player_killed)
+	GameEvents.item_collected.connect(_on_item_collected)
+	hud.show_start()
 	
 func _input(event):
-	if bird.current_state == bird.State.DEAD:
+	if player.current_state == player.PlayerState.DEAD:
 		if event.is_action_pressed("flap"):
-			bird.start()
+			hud.hide_start()
 			distance.start()
-			hud.hide_title()
+			spawner.start()
+			player.start()
 
-func _on_kill_zone_died(reason: Variant) -> void:
-	bird.stop()
+func _on_player_killed(reason: Variant) -> void:
+	spawner.stop()
+	player.stop()
 	distance.stop()
-	hud.show_title()
+	hud.show_start()
 	print(reason)
 	
-func _on_kill_zone_2_died(reason: Variant) -> void:
-	bird.stop()
-	distance.stop()
-	hud.show_title()
-	print(reason)
+func _on_item_collected(type: String, count: int, value: float) -> void:
+	player.consume_item(type, count, value)
+	print(type)

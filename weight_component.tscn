@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bokyvhyk64ham"]
+
+[ext_resource type="Script" uid="uid://b17jqa3oieba6" path="res://weight_component.gd" id="1_o7ot2"]
+
+[node name="WeightComponent" type="Node"]
+script = ExtResource("1_o7ot2")

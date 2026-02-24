@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8v1imb3h0xdn"]
+
+[ext_resource type="Script" uid="uid://bh7vg8oilir0n" path="res://fish.gd" id="1_xu20i"]
+[ext_resource type="PackedScene" uid="uid://bgpaobvr22jw6" path="res://collect_area.tscn" id="2_hgn23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ik3a"]
+size = Vector2(32, 32)
+
+[node name="Fish" type="Node2D" groups=["fish"]]
+script = ExtResource("1_xu20i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 32.0
+color = Color(0.10980392, 0.74509805, 0, 1)
+
+[node name="CollectArea" parent="." instance=ExtResource("2_hgn23")]
+collision_layer = 8
+type = "Fish"
+value = 20.0
+
+[node name="CollisionShape2D" parent="CollectArea" index="0"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_6ik3a")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-6, 10)
+rect = Rect2(-10, -10, 32, 32)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="CollectArea"]

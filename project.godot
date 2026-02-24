@@ -15,6 +15,10 @@ run/main_scene="uid://bkvcno2k442a6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameEvents="*res://game_events.gd"
+
 [display]
 
 window/size/viewport_width=1080
@@ -28,8 +32,18 @@ flap={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="World"
+2d_physics/layer_3="Collidables"
+2d_physics/layer_4="Collectibles"
+
+[physics]
+
+2d/layer_4="Collectibles"
+
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

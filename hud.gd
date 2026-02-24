@@ -1,10 +1,12 @@
 extends CanvasLayer
 
-func show_title() -> void:
-	$Title.show()
-	$StartButton.show()
+@onready var title: Label = $Title
+@onready var caption: Label = $Caption
 
-func hide_title() -> void:
-	$Title.hide()
-	$StartButton.hide()
-	
+func show_start() -> void:
+	title.show()
+	caption.show()
+
+func hide_start() -> void:
+	title.hide()
+	caption.hide()

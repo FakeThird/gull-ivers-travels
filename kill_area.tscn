@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd8ornsc7t8lg"]
+
+[ext_resource type="Script" uid="uid://bhlr4nha52cw8" path="res://kill_area.gd" id="1_8lwfm"]
+
+[node name="KillArea" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_8lwfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
