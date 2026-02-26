@@ -1,34 +1,68 @@
-[gd_scene load_steps=21 format=3 uid="uid://djecfjb5wt7sf"]
+[gd_scene load_steps=34 format=3 uid="uid://djecfjb5wt7sf"]
 
 [ext_resource type="Script" uid="uid://bo2ympl4xpqc" path="res://player.gd" id="1_g5k2s"]
-[ext_resource type="PackedScene" uid="uid://bq7mqkahs0axd" path="res://movement_component.tscn" id="2_sweqy"]
+[ext_resource type="PackedScene" uid="uid://bq7mqkahs0axd" path="res://components/movement_component.tscn" id="2_sweqy"]
 [ext_resource type="Resource" uid="uid://bi5eyb4uavcrs" path="res://player_stats.tres" id="3_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://by8vebje7wia3" path="res://assets/seagull/death/0.png" id="3_606se"]
-[ext_resource type="PackedScene" uid="uid://c27pmruuujkpx" path="res://stamina_component.tscn" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://cmlhbfp6ghqr" path="res://assets/seagull/flap/back/0.png" id="3_iruf7"]
+[ext_resource type="PackedScene" uid="uid://c27pmruuujkpx" path="res://components/stamina_component.tscn" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://b0ygropvp1amp" path="res://assets/seagull/flap/back/1.png" id="4_j5n4i"]
 [ext_resource type="Texture2D" uid="uid://j328llyucu6t" path="res://assets/seagull/death/1.png" id="4_u1c27"]
-[ext_resource type="PackedScene" uid="uid://bokyvhyk64ham" path="res://weight_component.tscn" id="5_dw050"]
+[ext_resource type="Texture2D" uid="uid://cv550ox6uh7ls" path="res://assets/seagull/flap/back/2.png" id="5_634y6"]
+[ext_resource type="PackedScene" uid="uid://bokyvhyk64ham" path="res://components/weight_component.tscn" id="5_dw050"]
 [ext_resource type="Texture2D" uid="uid://dtkc75or24fy3" path="res://assets/seagull/death/2.png" id="5_op7ga"]
+[ext_resource type="Texture2D" uid="uid://cs773v3ht8fp4" path="res://assets/seagull/flap/back/3.png" id="6_efrwb"]
 [ext_resource type="Texture2D" uid="uid://dsbj4yn7icvp2" path="res://assets/seagull/death/3.png" id="6_q13i1"]
+[ext_resource type="Texture2D" uid="uid://duosoeycf6ipx" path="res://assets/seagull/flap/back/4.png" id="7_hiqhm"]
 [ext_resource type="Texture2D" uid="uid://bu4usy35a3o10" path="res://assets/seagull/death/4.png" id="7_pylmc"]
 [ext_resource type="Texture2D" uid="uid://cvvr5t6qvskko" path="res://assets/seagull/death/5.png" id="8_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://bd71yduul1esx" path="res://assets/seagull/flap/0.PNG" id="9_5tmop"]
-[ext_resource type="Texture2D" uid="uid://da2qetjtkp7vr" path="res://assets/seagull/flap/1.PNG" id="10_7ahtn"]
-[ext_resource type="Texture2D" uid="uid://dprhkv4r2kevt" path="res://assets/seagull/flap/2.PNG" id="11_7lmhl"]
-[ext_resource type="Texture2D" uid="uid://ttkhd6stiqfu" path="res://assets/seagull/flap/3.PNG" id="12_dx0e4"]
 [ext_resource type="AudioStream" uid="uid://drm6ir4b20grf" path="res://assets/audio/wingsflapping.wav" id="13_op7ga"]
 [ext_resource type="AudioStream" uid="uid://bv0ai24jjic35" path="res://assets/audio/seagull.wav" id="14_q13i1"]
-[ext_resource type="PackedScene" uid="uid://bobtordbcjnmb" path="res://animation_component.tscn" id="18_q13i1"]
+[ext_resource type="Texture2D" uid="uid://dvb6w7a25vrg" path="res://assets/seagull/flap/body/0.png" id="14_tkwlq"]
+[ext_resource type="Texture2D" uid="uid://hlt858pxcw26" path="res://assets/seagull/flap/body/1.png" id="15_hl5qd"]
+[ext_resource type="Texture2D" uid="uid://cm1xnagbm3uoc" path="res://assets/seagull/flap/body/2.png" id="16_ek41f"]
+[ext_resource type="Texture2D" uid="uid://dewgdtteeipao" path="res://assets/seagull/flap/body/3.png" id="17_khis8"]
+[ext_resource type="Texture2D" uid="uid://6758xc01oe6n" path="res://assets/seagull/flap/body/4.png" id="18_b88wv"]
+[ext_resource type="PackedScene" uid="uid://bobtordbcjnmb" path="res://components/animation_component.tscn" id="18_q13i1"]
+[ext_resource type="Texture2D" uid="uid://b2r85axadog3j" path="res://assets/seagull/flap/front/0.png" id="19_pgbbb"]
+[ext_resource type="Texture2D" uid="uid://dknbp8cvoh0os" path="res://assets/seagull/flap/front/1.png" id="20_331ug"]
+[ext_resource type="Texture2D" uid="uid://x2vecm6gdx6t" path="res://assets/seagull/flap/front/2.png" id="21_ny14h"]
+[ext_resource type="Texture2D" uid="uid://d0e2viu4etkcf" path="res://assets/seagull/flap/front/3.png" id="22_ibah8"]
+[ext_resource type="Texture2D" uid="uid://ed8a4j5wyh8x" path="res://assets/seagull/flap/front/4.png" id="23_3iwfv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jm5j8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_pbfsw")
+"texture": ExtResource("3_iruf7")
 }],
 "loop": false,
-"name": &"dead",
-"speed": 4.0
+"name": &"die",
+"speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iruf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j5n4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_634y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_efrwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hiqhm")
+}],
+"loop": true,
+"name": &"flap",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwsg1"]
+animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_606se")
@@ -50,30 +84,56 @@ animations = [{
 }],
 "loop": false,
 "name": &"die",
-"speed": 4.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_5tmop")
+"texture": ExtResource("14_tkwlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hl5qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ek41f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_khis8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_b88wv")
 }],
-"loop": false,
-"name": &"dive",
+"loop": true,
+"name": &"flap",
 "speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xqrm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iruf7")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_5tmop")
+"texture": ExtResource("19_pgbbb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_7ahtn")
+"texture": ExtResource("20_331ug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_7lmhl")
+"texture": ExtResource("21_ny14h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_dx0e4")
+"texture": ExtResource("22_ibah8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3iwfv")
 }],
-"loop": false,
+"loop": true,
 "name": &"flap",
 "speed": 8.0
 }]
@@ -95,16 +155,37 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(-1, 1)
+[node name="Animation" type="Node2D" parent="."]
+
+[node name="BackAnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
+rotation = -3.1415925
+scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_jm5j8")
-animation = &"dead"
+animation = &"flap"
 autoplay = "flap"
+frame_progress = 0.53438
+
+[node name="BodyAnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
+rotation = -3.1415925
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_qwsg1")
+animation = &"flap"
+autoplay = "flap"
+frame_progress = 0.92446667
+
+[node name="FrontAnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
+rotation = -3.1415925
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_1xqrm")
+animation = &"flap"
+autoplay = "flap"
+frame_progress = 0.76693916
 
 [node name="AudioSet" type="Node2D" parent="."]
 
 [node name="WingFlap" type="AudioStreamPlayer2D" parent="AudioSet"]
 stream = ExtResource("13_op7ga")
+volume_db = 10.0
 
 [node name="DeathCry" type="AudioStreamPlayer2D" parent="AudioSet"]
 stream = ExtResource("14_q13i1")
@@ -122,8 +203,11 @@ stats = ExtResource("3_2hs0m")
 stats = ExtResource("3_2hs0m")
 shed_rate = 0.3
 
-[node name="AnimationComponent" parent="." node_paths=PackedStringArray("sprite", "flap_sound", "death_sound") instance=ExtResource("18_q13i1")]
-sprite = NodePath("../AnimatedSprite2D")
+[node name="AnimationComponent" parent="." node_paths=PackedStringArray("back_sprite", "body_sprite", "front_sprite", "animation", "flap_sound", "death_sound") instance=ExtResource("18_q13i1")]
+back_sprite = NodePath("../Animation/BackAnimatedSprite2D")
+body_sprite = NodePath("../Animation/BodyAnimatedSprite2D")
+front_sprite = NodePath("../Animation/FrontAnimatedSprite2D")
+animation = NodePath("../Animation")
 flap_sound = NodePath("../AudioSet/WingFlap")
 death_sound = NodePath("../AudioSet/DeathCry")
 

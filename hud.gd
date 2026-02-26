@@ -10,3 +10,4 @@ func show_start() -> void:
 func hide_start() -> void:
 	title.hide()
 	caption.hide()
+	

@@ -7,6 +7,10 @@ var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
 	set_physics_process(false)
+	
+func _process(delta: float) -> void:
+	if velocity.length() > 0.1:
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, velocity.angle(), 0.2)
 
 func _physics_process(delta: float):
 	velocity.y += gravity * delta
@@ -17,5 +21,6 @@ func _physics_process(delta: float):
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if body is Player:
+		$Chomp.play()
 		velocity.y = jump_force
 		set_physics_process(true)

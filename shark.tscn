@@ -1,28 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://j84gngqbsq0p"]
+[gd_scene load_steps=9 format=3 uid="uid://j84gngqbsq0p"]
 
 [ext_resource type="Script" uid="uid://dp6chbemy7lag" path="res://shark.gd" id="1_rwmi6"]
 [ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="2_d5pdq"]
+[ext_resource type="Texture2D" uid="uid://8uhgvo5xjg7q" path="res://assets/shark/0.png" id="2_k17ol"]
+[ext_resource type="AudioStream" uid="uid://wblmdml4uko5" path="res://assets/audio/chomp.wav" id="4_uce6o"]
+[ext_resource type="AudioStream" uid="uid://co5kq8lwii7a4" path="res://assets/audio/splash.wav" id="5_l26on"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uce6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k17ol")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k17ol"]
+size = Vector2(107, 23.000008)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5pdq"]
 size = Vector2(50, 1440)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k17ol"]
-size = Vector2(32, 20)
-
 [node name="Shark" type="Node2D" groups=["sharks"]]
 script = ExtResource("1_rwmi6")
-trigger_distance = null
-jump_force = null
-gravity = null
-scroll_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 offset_left = -16.0
 offset_right = 16.0
 offset_bottom = 64.0
 color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_uce6o")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, 2)
+
+[node name="KillArea" parent="AnimatedSprite2D" instance=ExtResource("2_d5pdq")]
+scale = Vector2(0.39999998, 0.39999998)
+collision_layer = 4
+reason = "Shark Kill Area"
+
+[node name="CollisionShape2D" parent="AnimatedSprite2D/KillArea" index="0"]
+position = Vector2(6.4999986, 8.499998)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_k17ol")
 
 [node name="TriggerArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -31,14 +59,12 @@ collision_layer = 2
 position = Vector2(-41, 0)
 shape = SubResource("RectangleShape2D_d5pdq")
 
-[node name="KillArea" parent="." instance=ExtResource("2_d5pdq")]
-collision_layer = 4
-reason = "Shark Kill Area"
+[node name="Chomp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uce6o")
 
-[node name="CollisionShape2D" parent="KillArea" index="0"]
-position = Vector2(0, 10)
-shape = SubResource("RectangleShape2D_k17ol")
+[node name="Splash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l26on")
 
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
 
-[editable path="KillArea"]
+[editable path="AnimatedSprite2D/KillArea"]

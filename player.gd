@@ -8,7 +8,10 @@ enum PlayerState { FLYING, DEAD }
 @export var stamina_cost: float = 5.0
 @export var weight_cost: float = 5.0
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var back_sprite: AnimatedSprite2D = $Animation/BackAnimatedSprite2D
+@onready var body_sprite: AnimatedSprite2D = $Animation/BodyAnimatedSprite2D
+@onready var front_sprite: AnimatedSprite2D = $Animation/FrontAnimatedSprite2D
+
 @onready var movement_component: Node = $MovementComponent
 @onready var stamina_component: Node = $StaminaComponent
 @onready var weight_component: Node = $WeightComponent
@@ -16,8 +19,17 @@ enum PlayerState { FLYING, DEAD }
 
 func _ready() -> void:
 	current_state = PlayerState.DEAD
-	sprite.sprite_frames.set_animation_loop("flap", true)
+	back_sprite.sprite_frames.set_animation_loop("flap", true)
+	body_sprite.sprite_frames.set_animation_loop("flap", true)
+	front_sprite.sprite_frames.set_animation_loop("flap", true)
 
+
+func _process(delta: float) -> void:
+	if stats.current_weight > 100:
+		body_sprite.scale.y = -(((stats.current_weight - 100.0) / 50.0) + 1.0)
+	else:
+		body_sprite.scale.y = -1
+	
 func _on_flap_performed() -> void:
 	if stamina_component:
 		stamina_component.decrease_stamina(stamina_cost)
@@ -31,7 +43,7 @@ func _on_flap_performed() -> void:
 	print("stamina: " + str(stats.current_stamina) + ", weight: " + str(stats.current_weight))
 
 func start() -> void:
-	if not stats or not sprite or not movement_component:
+	if not stats or not body_sprite or not movement_component:
 		return
 	
 	current_state = PlayerState.FLYING
@@ -44,10 +56,12 @@ func start() -> void:
 		weight_component.start()
 		
 	if animation_component:
-		sprite.sprite_frames.set_animation_loop("flap", false)
+		back_sprite.sprite_frames.set_animation_loop("flap", false)
+		body_sprite.sprite_frames.set_animation_loop("flap", false)
+		front_sprite.sprite_frames.set_animation_loop("flap", false)
 
 func stop() -> void:
-	if not sprite or not movement_component:
+	if not body_sprite or not movement_component:
 		return
 		
 	current_state = PlayerState.DEAD

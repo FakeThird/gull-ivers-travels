@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkvcno2k442a6"]
+[gd_scene load_steps=24 format=3 uid="uid://bkvcno2k442a6"]
 
 [ext_resource type="PackedScene" uid="uid://djecfjb5wt7sf" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ddnifn0cphh3u" path="res://world.gd" id="1_fj7yv"]
@@ -12,19 +12,34 @@
 [ext_resource type="PackedScene" uid="uid://b8v1imb3h0xdn" path="res://fish.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://daylihhq0kjcp" path="res://follow_camera.tscn" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bhwigvbtrgv32" path="res://spawner.tscn" id="7_pkg7o"]
+[ext_resource type="AudioStream" uid="uid://fpagmd4cp85e" path="res://assets/audio/theme.wav" id="8_ikiii"]
+[ext_resource type="Texture2D" uid="uid://bpsr6fk403guj" path="res://assets/ocean/0.png" id="9_hiqwa"]
+[ext_resource type="Script" uid="uid://c4wg6idntfu8s" path="res://sea.gd" id="10_26xuy"]
+[ext_resource type="Texture2D" uid="uid://bb67gx8kl2sh" path="res://assets/ocean/1.png" id="10_udxuc"]
+[ext_resource type="Texture2D" uid="uid://dbxp0okxsa0h5" path="res://assets/ocean/2.png" id="11_ikiii"]
 [ext_resource type="AudioStream" uid="uid://mm8us1hrn341" path="res://assets/audio/oceanwaves.wav" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oo05xdye4s6t" path="res://hud.tscn" id="14_70uel"]
+[ext_resource type="AudioStream" uid="uid://co5kq8lwii7a4" path="res://assets/audio/splash.wav" id="14_bc84e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tlwt5"]
 normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqk2v"]
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cbp6q"]
+frames = 3
+speed_scale = 6.0
+frame_0/texture = ExtResource("9_hiqwa")
+frame_0/duration = 2.0
+frame_1/texture = ExtResource("10_udxuc")
+frame_1/duration = 2.0
+frame_2/texture = ExtResource("11_ikiii")
+frame_2/duration = 2.0
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_fj7yv")
 
 [node name="SampleBackground" type="Parallax2D" parent="."]
-visible = false
 repeat_size = Vector2(1080, 0)
 
 [node name="Atmosphere" type="ColorRect" parent="SampleBackground"]
@@ -86,10 +101,6 @@ scale = Vector2(1.8750001, 2.222222)
 texture = ExtResource("6_2u3nc")
 centered = false
 
-[node name="OceanSounds" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_2o6r5")
-autoplay = true
-
 [node name="WorldBoundaries" type="StaticBody2D" parent="."]
 collision_layer = 2
 
@@ -115,16 +126,33 @@ position = Vector2(0, 205)
 rotation = 3.1415927
 reason = "Sky Kill Area"
 
-[node name="Sea" parent="." instance=ExtResource("4_aqk2v")]
+[node name="Sea" parent="." node_paths=PackedStringArray("splash") instance=ExtResource("4_aqk2v")]
+visibility_layer = 2
+z_index = 10
+z_as_relative = false
 position = Vector2(0, 720)
+script = ExtResource("10_26xuy")
+splash = NodePath("../FollowCamera/Splash")
 
 [node name="Parallax2D" parent="Sea" index="0"]
 repeat_size = Vector2(1080, 0)
 
 [node name="ColorRect" type="ColorRect" parent="Sea/Parallax2D" index="0"]
-offset_top = -160.0
+modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.7058824)
+offset_top = -85.0
 offset_right = 1080.0
-color = Color(0, 0.43137255, 1, 0.39215687)
+color = Color(0.3372549, 0.34509805, 0.48235294, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Sea/Parallax2D" index="1"]
+modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.7058824)
+offset_top = -165.0
+offset_right = 431.99997
+offset_bottom = -133.0
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AnimatedTexture_cbp6q")
+stretch_mode = 1
 
 [node name="KillArea" parent="Sea" index="1"]
 position = Vector2(0, -160)
@@ -144,7 +172,25 @@ world = NodePath("../..")
 fish_scene = ExtResource("6_dwbse")
 shark_scene = ExtResource("5_036b0")
 
+[node name="Theme" type="AudioStreamPlayer2D" parent="FollowCamera"]
+position = Vector2(-100, -360)
+stream = ExtResource("8_ikiii")
+autoplay = true
+area_mask = 2
+
+[node name="OceanSounds" type="AudioStreamPlayer2D" parent="FollowCamera"]
+position = Vector2(-100, -360)
+stream = ExtResource("13_2o6r5")
+autoplay = true
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="FollowCamera"]
+position = Vector2(-100, 360)
+stream = ExtResource("14_bc84e")
+
 [node name="HUD" parent="." instance=ExtResource("14_70uel")]
+
+[connection signal="kill_area_entered" from="Sea/KillArea" to="Sea" method="_on_kill_area_kill_area_entered"]
+[connection signal="kill_area_exited" from="Sea/KillArea" to="Sea" method="_on_kill_area_kill_area_exited"]
 
 [editable path="Sky"]
 [editable path="Sky/KillArea"]
