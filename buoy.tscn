@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxmyktka707cg"]
+[gd_scene load_steps=7 format=3 uid="uid://dxmyktka707cg"]
 
 [ext_resource type="Script" uid="uid://c471e43x2c2x4" path="res://buoy.gd" id="1_7e6i7"]
-[ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_ckpt4"]
+[ext_resource type="Texture2D" uid="uid://litlmtcrf7m6" path="res://assets/buoy/0.png" id="2_7e6i7"]
 [ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_1piul"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bp7ej"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ckpt4")
+"texture": ExtResource("2_7e6i7")
 }],
 "loop": true,
 "name": &"default",
@@ -16,15 +16,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3lyj"]
-size = Vector2(40, 82)
+size = Vector2(107, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e6i7"]
+size = Vector2(50, 189)
 
 [node name="Buoy" type="Node2D" groups=["buoys", "spawnables"]]
 script = ExtResource("1_7e6i7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-13.999999, -39)
-rotation = -1.5707964
-scale = Vector2(5.5, 5)
+position = Vector2(-1, -111.00001)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_bp7ej")
 autoplay = "default"
 
@@ -32,13 +34,20 @@ autoplay = "default"
 reason = "Buoy Kill Area"
 
 [node name="CollisionShape2D" parent="KillArea" index="0"]
-position = Vector2(-4, -39)
+position = Vector2(-1.5, -18)
 shape = SubResource("RectangleShape2D_y3lyj")
+
+[node name="KillArea2" parent="." instance=ExtResource("3_1piul")]
+
+[node name="CollisionShape2D" parent="KillArea2" index="0"]
+position = Vector2(-2, -140.5)
+shape = SubResource("RectangleShape2D_7e6i7")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-24, -41)
-rect = Rect2(0, -39, 40, 82)
+rect = Rect2(-37, -3, 120, 46)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
 [editable path="KillArea"]
+[editable path="KillArea2"]

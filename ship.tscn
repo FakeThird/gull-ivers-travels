@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://lphejilergf4"]
+[gd_scene load_steps=7 format=3 uid="uid://lphejilergf4"]
 
 [ext_resource type="Script" uid="uid://cxveggggahdfc" path="res://ship.gd" id="1_v4325"]
-[ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_c3vuw"]
+[ext_resource type="Texture2D" uid="uid://0u2e3npytw72" path="res://assets/ship/0.png" id="2_v4325"]
 [ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_78o8j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpsff"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_c3vuw")
+"texture": ExtResource("2_v4325")
 }],
 "loop": true,
 "name": &"default",
@@ -16,14 +16,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb2vj"]
-size = Vector2(446, 317)
+size = Vector2(178.75, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3vuw"]
+size = Vector2(59.071774, 14.922579)
 
 [node name="Ship" type="Node2D" groups=["ships", "spawnables"]]
 script = ExtResource("1_v4325")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -235)
-scale = Vector2(30, 40)
+position = Vector2(0, -12.000004)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xpsff")
 autoplay = "default"
 flip_h = true
@@ -32,13 +35,21 @@ flip_h = true
 reason = "Buoy Kill Area"
 
 [node name="CollisionShape2D" parent="KillArea" index="0"]
-position = Vector2(2, -155.5)
+position = Vector2(15.625, -4.75)
 shape = SubResource("RectangleShape2D_pb2vj")
 
+[node name="KillArea2" parent="." instance=ExtResource("3_78o8j")]
+
+[node name="CollisionShape2D" parent="KillArea2" index="0"]
+position = Vector2(-86.00001, -13.999998)
+rotation = 0.6632251
+shape = SubResource("RectangleShape2D_c3vuw")
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-175, -33)
-rect = Rect2(-44, -281, 445, 315)
+position = Vector2(-176, -17)
+rect = Rect2(61, -25, 231, 59)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
 [editable path="KillArea"]
+[editable path="KillArea2"]

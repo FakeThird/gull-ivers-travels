@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k17ol"]
-size = Vector2(129.00006, 23.000011)
+size = Vector2(88.66671, 23.666683)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5pdq"]
 size = Vector2(50, 1440)
@@ -36,7 +36,7 @@ offset_bottom = 64.0
 color = Color(0.5251013, 0.5251013, 0.5251013, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_uce6o")
 animation = &"idle"
 autoplay = "idle"
@@ -49,8 +49,8 @@ collision_layer = 4
 reason = "Shark Kill Area"
 
 [node name="CollisionShape2D" parent="AnimatedSprite2D/KillArea" index="0"]
-position = Vector2(-2.4999938, 9.499999)
-scale = Vector2(0.99999934, 0.99999934)
+position = Vector2(-22.666653, 9.833334)
+scale = Vector2(0.9999993, 0.9999993)
 shape = SubResource("RectangleShape2D_k17ol")
 
 [node name="TriggerArea" type="Area2D" parent="."]

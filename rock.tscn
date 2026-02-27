@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5qwe8hurcxbe"]
+[gd_scene load_steps=11 format=3 uid="uid://b5qwe8hurcxbe"]
 
 [ext_resource type="Script" uid="uid://cn1eufdbuuygh" path="res://rock.gd" id="1_wecdg"]
-[ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_46y1q"]
+[ext_resource type="Texture2D" uid="uid://d2n7sfmwqavyn" path="res://assets/rock/0.png" id="2_wecdg"]
 [ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_o54ku"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gtey5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_46y1q")
+"texture": ExtResource("2_wecdg")
 }],
 "loop": true,
 "name": &"default",
@@ -16,15 +16,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnrwk"]
-size = Vector2(150, 190)
+size = Vector2(399, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wecdg"]
+size = Vector2(224, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46y1q"]
+size = Vector2(155, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o54ku"]
+size = Vector2(56, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtey5"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfe6l"]
+size = Vector2(39, 24)
 
 [node name="Rock" type="Node2D" groups=["rocks", "spawnables"]]
 script = ExtResource("1_wecdg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-37.3036, 65.1855)
-rotation = -1.5707964
-scale = Vector2(12.59062, 18.621313)
+position = Vector2(-3.0000038, -6.0000057)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_gtey5")
 autoplay = "default"
 
@@ -32,13 +46,48 @@ autoplay = "default"
 reason = "Buoy Kill Area"
 
 [node name="CollisionShape2D" parent="KillArea" index="0"]
-position = Vector2(0, 65)
+position = Vector2(9.5, 87.5)
 shape = SubResource("RectangleShape2D_nnrwk")
+
+[node name="KillArea2" parent="." instance=ExtResource("3_o54ku")]
+
+[node name="CollisionShape2D" parent="KillArea2" index="0"]
+position = Vector2(19, -29.5)
+shape = SubResource("RectangleShape2D_wecdg")
+
+[node name="KillArea3" parent="." instance=ExtResource("3_o54ku")]
+
+[node name="CollisionShape2D" parent="KillArea3" index="0"]
+position = Vector2(15.5, -100.5)
+shape = SubResource("RectangleShape2D_46y1q")
+
+[node name="KillArea4" parent="." instance=ExtResource("3_o54ku")]
+
+[node name="CollisionShape2D" parent="KillArea4" index="0"]
+position = Vector2(-1, -146)
+shape = SubResource("RectangleShape2D_o54ku")
+
+[node name="KillArea5" parent="." instance=ExtResource("3_o54ku")]
+
+[node name="CollisionShape2D" parent="KillArea5" index="0"]
+position = Vector2(-149, -4)
+shape = SubResource("RectangleShape2D_gtey5")
+
+[node name="KillArea6" parent="." instance=ExtResource("3_o54ku")]
+
+[node name="CollisionShape2D" parent="KillArea6" index="0"]
+position = Vector2(69.5, -139)
+shape = SubResource("RectangleShape2D_qfe6l")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-75, 117)
-rect = Rect2(0, -147, 150, 190)
+rect = Rect2(-166, -62, 471, 105)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
 [editable path="KillArea"]
+[editable path="KillArea2"]
+[editable path="KillArea3"]
+[editable path="KillArea4"]
+[editable path="KillArea5"]
+[editable path="KillArea6"]
