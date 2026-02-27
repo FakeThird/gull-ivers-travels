@@ -39,6 +39,8 @@ func spawn_object() -> void:
 	
 	world.add_child(new_obj)
 	new_obj.position = global_position
+	if new_obj.has_method("on_spawn"):
+		new_obj.on_spawn()
 
 func clear() -> void:
 	clear_group("spawnables")
