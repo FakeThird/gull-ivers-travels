@@ -16,7 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ik3a"]
-size = Vector2(52, 23)
+size = Vector2(38, 21)
 
 [node name="Fish" type="Node2D" groups=["fish", "spawnables"]]
 script = ExtResource("1_xu20i")
@@ -32,8 +32,8 @@ offset_bottom = 32.0
 color = Color(0.10980392, 0.74509805, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4.9999995)
-scale = Vector2(3.5, 3.5)
+position = Vector2(0, -0.99999976)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_oovoc")
 animation = &"idle"
 autoplay = "idle"
@@ -46,12 +46,12 @@ type = "Fish"
 value = 20.0
 
 [node name="CollisionShape2D" parent="CollectArea" index="0"]
-position = Vector2(0, 12.5)
+position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_6ik3a")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-6, 10)
-rect = Rect2(-20, -9, 52, 23)
+position = Vector2(-9, 10)
+rect = Rect2(-10, -9, 38, 21)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
