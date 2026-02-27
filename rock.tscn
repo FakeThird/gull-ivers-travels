@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5qwe8hurcxbe"]
+
+[ext_resource type="Script" uid="uid://cn1eufdbuuygh" path="res://rock.gd" id="1_wecdg"]
+[ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_46y1q"]
+[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_o54ku"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtey5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_46y1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnrwk"]
+size = Vector2(150, 190)
+
+[node name="Rock" type="Node2D" groups=["rocks", "spawnables"]]
+script = ExtResource("1_wecdg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-37.3036, 65.1855)
+rotation = -1.5707964
+scale = Vector2(12.59062, 18.621313)
+sprite_frames = SubResource("SpriteFrames_gtey5")
+autoplay = "default"
+
+[node name="KillArea" parent="." instance=ExtResource("3_o54ku")]
+reason = "Buoy Kill Area"
+
+[node name="CollisionShape2D" parent="KillArea" index="0"]
+position = Vector2(0, 65)
+shape = SubResource("RectangleShape2D_nnrwk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-75, 117)
+rect = Rect2(0, -147, 150, 190)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="KillArea"]

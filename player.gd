@@ -67,6 +67,9 @@ func stop() -> void:
 	current_state = PlayerState.DEAD
 	movement_component.stop()
 	
+	if weight_component:
+		weight_component.stop()
+	
 	if animation_component:
 		animation_component.play("death")
 

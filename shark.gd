@@ -10,13 +10,14 @@ func _ready():
 	
 func _process(delta: float) -> void:
 	if velocity.length() > 0.1:
-		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, velocity.angle(), 0.2)
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, velocity.angle() + PI, 0.2)
 
 func _physics_process(delta: float):
 	velocity.y += gravity * delta
 	position.y += velocity.y * delta
 	
 	if velocity.y > 0 and position.y > 515:
+		$Splash.play()
 		queue_free()
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:

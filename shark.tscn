@@ -18,12 +18,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k17ol"]
-size = Vector2(107, 23.000008)
+size = Vector2(129.00006, 23.000011)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5pdq"]
 size = Vector2(50, 1440)
 
-[node name="Shark" type="Node2D" groups=["sharks"]]
+[node name="Shark" type="Node2D" groups=["sharks", "spawnables"]]
 script = ExtResource("1_rwmi6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -41,6 +41,7 @@ sprite_frames = SubResource("SpriteFrames_uce6o")
 animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, 2)
+flip_h = true
 
 [node name="KillArea" parent="AnimatedSprite2D" instance=ExtResource("2_d5pdq")]
 scale = Vector2(0.39999998, 0.39999998)
@@ -48,15 +49,15 @@ collision_layer = 4
 reason = "Shark Kill Area"
 
 [node name="CollisionShape2D" parent="AnimatedSprite2D/KillArea" index="0"]
-position = Vector2(6.4999986, 8.499998)
-scale = Vector2(0.9999997, 0.9999997)
+position = Vector2(-2.4999938, 9.499999)
+scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_k17ol")
 
 [node name="TriggerArea" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
-position = Vector2(-41, 0)
+position = Vector2(-35, 0)
 shape = SubResource("RectangleShape2D_d5pdq")
 
 [node name="Chomp" type="AudioStreamPlayer2D" parent="."]

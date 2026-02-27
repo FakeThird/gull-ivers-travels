@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxmyktka707cg"]
+
+[ext_resource type="Script" uid="uid://c471e43x2c2x4" path="res://buoy.gd" id="1_7e6i7"]
+[ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_ckpt4"]
+[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_1piul"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp7ej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ckpt4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3lyj"]
+size = Vector2(40, 82)
+
+[node name="Buoy" type="Node2D" groups=["buoys", "spawnables"]]
+script = ExtResource("1_7e6i7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-13.999999, -39)
+rotation = -1.5707964
+scale = Vector2(5.5, 5)
+sprite_frames = SubResource("SpriteFrames_bp7ej")
+autoplay = "default"
+
+[node name="KillArea" parent="." instance=ExtResource("3_1piul")]
+reason = "Buoy Kill Area"
+
+[node name="CollisionShape2D" parent="KillArea" index="0"]
+position = Vector2(-4, -39)
+shape = SubResource("RectangleShape2D_y3lyj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-24, -41)
+rect = Rect2(0, -39, 40, 82)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+
+[editable path="KillArea"]

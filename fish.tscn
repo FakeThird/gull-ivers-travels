@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8v1imb3h0xdn"]
 
-[ext_resource type="Script" uid="uid://bh7vg8oilir0n" path="res://fish.gd" id="1_xu20i"]
+[ext_resource type="Script" path="res://fish.gd" id="1_xu20i"]
 [ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_6ik3a"]
 [ext_resource type="PackedScene" uid="uid://bgpaobvr22jw6" path="res://collect_area.tscn" id="2_hgn23"]
 
@@ -16,9 +16,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ik3a"]
-size = Vector2(32, 32)
+size = Vector2(40, 23)
 
-[node name="Fish" type="Node2D" groups=["fish"]]
+[node name="Fish" type="Node2D" groups=["fish", "spawnables"]]
 script = ExtResource("1_xu20i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -36,6 +36,7 @@ sprite_frames = SubResource("SpriteFrames_oovoc")
 animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, 3)
+flip_h = true
 
 [node name="CollectArea" parent="." instance=ExtResource("2_hgn23")]
 collision_layer = 8
@@ -43,12 +44,12 @@ type = "Fish"
 value = 20.0
 
 [node name="CollisionShape2D" parent="CollectArea" index="0"]
-position = Vector2(0, 16)
+position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_6ik3a")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-6, 10)
-rect = Rect2(-10, -10, 32, 32)
+rect = Rect2(-14, -9, 40, 23)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
