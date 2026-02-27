@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://oo05xdye4s6t"]
+[gd_scene load_steps=20 format=3 uid="uid://oo05xdye4s6t"]
 
 [ext_resource type="FontFile" uid="uid://ccp68wpm6jlts" path="res://assets/font/Pixellari.ttf" id="1_37p78"]
-[ext_resource type="Script" path="res://hud.gd" id="1_64ctp"]
-[ext_resource type="Script" path="res://distance.gd" id="3_8sq4i"]
+[ext_resource type="Script" uid="uid://cgwd27w5nddx2" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="Script" uid="uid://4duau1en7jqo" path="res://distance.gd" id="3_8sq4i"]
 [ext_resource type="AudioStream" uid="uid://drxgreou5f7d2" path="res://assets/audio/milestone1.wav" id="4_1xsix"]
 [ext_resource type="AudioStream" uid="uid://b0wbuuk0pncgr" path="res://assets/audio/milestone2.wav" id="5_rftc2"]
 [ext_resource type="AudioStream" uid="uid://c4ad0bdondg3k" path="res://assets/audio/milestone3.wav" id="6_61f8s"]
@@ -10,9 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://bw7rdx2popnp1" path="res://assets/player_stats/background.png" id="7_g10ll"]
 [ext_resource type="Texture2D" uid="uid://cbrvyg4jsvj7b" path="res://assets/player_stats/frame.png" id="8_gpiub"]
 [ext_resource type="Texture2D" uid="uid://cn83wh5ndv0nu" path="res://assets/player_stats/stamina.png" id="9_amv7k"]
-[ext_resource type="Script" path="res://stats.gd" id="10_gpiub"]
+[ext_resource type="Script" uid="uid://db7g16ce4riig" path="res://stats.gd" id="10_gpiub"]
 [ext_resource type="Resource" uid="uid://bi5eyb4uavcrs" path="res://player_stats.tres" id="11_amv7k"]
-[ext_resource type="Script" path="res://weight.gd" id="12_1fv7p"]
+[ext_resource type="Script" uid="uid://btmf4e6vc5qwx" path="res://weight.gd" id="12_1fv7p"]
+[ext_resource type="Texture2D" uid="uid://xyctpwq31t" path="res://assets/player_stats/oxygen.png" id="12_4q17s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
 font = ExtResource("1_37p78")
@@ -65,20 +66,6 @@ script = ExtResource("3_8sq4i")
 [node name="Milestone" type="AudioStreamPlayer" parent="Distance"]
 stream = SubResource("AudioStreamRandomizer_g10ll")
 
-[node name="Meter" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -79.0
-offset_top = 96.0
-offset_right = -37.0
-offset_bottom = 128.0
-grow_horizontal = 0
-text = "0m"
-label_settings = SubResource("LabelSettings_64ctp")
-horizontal_alignment = 1
-script = ExtResource("7_4u2vk")
-
 [node name="Title" type="Label" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
@@ -121,6 +108,21 @@ texture_progress = ExtResource("9_amv7k")
 texture_progress_offset = Vector2(20, 6)
 script = ExtResource("10_gpiub")
 stats = ExtResource("11_amv7k")
+
+[node name="Oxygen" type="TextureProgressBar" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1037.0
+offset_top = 19.0
+offset_right = -995.0
+offset_bottom = 51.0
+grow_horizontal = 0
+scale = Vector2(4, 4)
+step = 25.0
+texture_progress = ExtResource("12_4q17s")
+texture_progress_offset = Vector2(50, 0)
+script = ExtResource("7_4u2vk")
 
 [node name="Weight" type="Label" parent="."]
 offset_left = 115.0

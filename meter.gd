@@ -1,13 +1,14 @@
-extends Label
+extends TextureProgressBar
 
 func _ready():
-	visible = false
+	max_value = 100
+	value = 0
 	GameEvents.timer_updated.connect(_on_timer_updated)
 
-func _on_timer_updated(percent: float, is_active: bool):
-	if is_active:
-		visible = true
-		text = "%.1f" % (percent * 100.0)
+func _on_timer_updated(reason: String, percent: float, is_active: bool):
+	if is_active and reason == "Sea Kill Area":
+		print(reason)
+		value = percent * 100
 	else:
-		visible = false
+		value = 0
  
