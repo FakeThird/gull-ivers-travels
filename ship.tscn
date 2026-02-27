@@ -16,17 +16,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb2vj"]
-size = Vector2(247, 43)
+size = Vector2(232, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3vuw"]
-size = Vector2(90.484566, 24.650429)
+size = Vector2(65.410736, 18.149126)
 
 [node name="Ship" type="Node2D" groups=["ships", "spawnables"]]
 script = ExtResource("1_v4325")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
-scale = Vector2(4, 4)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_xpsff")
 autoplay = "default"
 flip_h = true
@@ -35,19 +35,19 @@ flip_h = true
 reason = "Buoy Kill Area"
 
 [node name="CollisionShape2D" parent="KillArea" index="0"]
-position = Vector2(21.5, -2.5)
+position = Vector2(14, -5.5)
 shape = SubResource("RectangleShape2D_pb2vj")
 
 [node name="KillArea2" parent="." instance=ExtResource("3_78o8j")]
 
 [node name="CollisionShape2D" parent="KillArea2" index="0"]
-position = Vector2(-110.63057, -15.320728)
+position = Vector2(-101.79581, -18.825256)
 rotation = 0.6632251
 shape = SubResource("RectangleShape2D_c3vuw")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-176, -14)
-rect = Rect2(25, -25, 301, 59)
+rect = Rect2(44, -25, 264, 59)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 
