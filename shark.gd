@@ -25,3 +25,9 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 		$Chomp.play()
 		velocity.y = jump_force
 		set_physics_process(true)
+
+func on_spawn() -> void:
+	var roll = randf_range(0, 6)
+	position.y += roll * 20
+	roll = randf_range(0, 5)
+	jump_force -= roll * 40
