@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://j84gngqbsq0p"]
 
-[ext_resource type="Script" uid="uid://dp6chbemy7lag" path="res://shark.gd" id="1_rwmi6"]
-[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="2_d5pdq"]
+[ext_resource type="Script" uid="uid://dp6chbemy7lag" path="res://entities/shark/shark.gd" id="1_rwmi6"]
+[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://components/entities/kill_area.tscn" id="2_d5pdq"]
 [ext_resource type="Texture2D" uid="uid://8uhgvo5xjg7q" path="res://assets/shark/0.png" id="2_k17ol"]
 [ext_resource type="AudioStream" uid="uid://wblmdml4uko5" path="res://assets/audio/chomp.wav" id="4_uce6o"]
 [ext_resource type="AudioStream" uid="uid://co5kq8lwii7a4" path="res://assets/audio/splash.wav" id="5_l26on"]

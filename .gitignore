@@ -1,3 +1,17 @@
-# Godot 4+ specific ignores
+# Godot-specific ignores
 .godot/
-/android/
+exploit/
+
+# Construction/System files
+*.tmp
+*.log
+*.txt
+
+# Export binaries (keep the source, ignore the result)
+*.exe
+*.pck
+*.zip
+*.dmg
+*.app
+*.ipa
+*.apk

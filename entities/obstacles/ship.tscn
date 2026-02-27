@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://lphejilergf4"]
 
-[ext_resource type="Script" uid="uid://cxveggggahdfc" path="res://ship.gd" id="1_v4325"]
+[ext_resource type="Script" uid="uid://cxveggggahdfc" path="res://entities/obstacles/ship.gd" id="1_v4325"]
 [ext_resource type="Texture2D" uid="uid://0u2e3npytw72" path="res://assets/ship/0.png" id="2_v4325"]
-[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_78o8j"]
+[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://components/entities/kill_area.tscn" id="3_78o8j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpsff"]
 animations = [{

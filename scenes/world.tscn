@@ -1,34 +1,34 @@
 [gd_scene load_steps=42 format=3 uid="uid://bkvcno2k442a6"]
 
-[ext_resource type="PackedScene" uid="uid://djecfjb5wt7sf" path="res://player.tscn" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://ddnifn0cphh3u" path="res://world.gd" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://djecfjb5wt7sf" path="res://entities/player/player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://ddnifn0cphh3u" path="res://scenes/world.gd" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://d37m8018au24d" path="res://assets/background/6.png" id="2_bh8nc"]
 [ext_resource type="Texture2D" uid="uid://cnd45j2ivqbx0" path="res://assets/background/7.png" id="3_jjr1n"]
 [ext_resource type="Texture2D" uid="uid://bb1t87rd48noj" path="res://assets/background/3.png" id="4_70uel"]
-[ext_resource type="PackedScene" uid="uid://3gw0yro342k8" path="res://kill_zone.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://3gw0yro342k8" path="res://components/world/kill_zone.tscn" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://bg08v1qgmbhw" path="res://assets/background/8.png" id="4_gggvi"]
-[ext_resource type="PackedScene" uid="uid://j84gngqbsq0p" path="res://shark.tscn" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://j84gngqbsq0p" path="res://entities/shark/shark.tscn" id="5_036b0"]
 [ext_resource type="Texture2D" uid="uid://5lh7wkek0xmb" path="res://assets/background/9.png" id="5_w44yn"]
-[ext_resource type="PackedScene" uid="uid://daylihhq0kjcp" path="res://follow_camera.tscn" id="7_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://bhwigvbtrgv32" path="res://spawner.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://daylihhq0kjcp" path="res://components/world/follow_camera.tscn" id="7_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://bhwigvbtrgv32" path="res://components/world/spawner.tscn" id="7_pkg7o"]
 [ext_resource type="AudioStream" uid="uid://fpagmd4cp85e" path="res://assets/audio/theme.wav" id="8_ikiii"]
 [ext_resource type="Texture2D" uid="uid://dhvr3vd6q4d71" path="res://assets/clouds/1.png" id="9_o3ebs"]
-[ext_resource type="Script" uid="uid://c4wg6idntfu8s" path="res://sea.gd" id="10_26xuy"]
+[ext_resource type="Script" uid="uid://c4wg6idntfu8s" path="res://components/world/sea.gd" id="10_26xuy"]
 [ext_resource type="Texture2D" uid="uid://cduvni4grqp0u" path="res://assets/clouds/2.png" id="10_k83mh"]
 [ext_resource type="Texture2D" uid="uid://ca4q2v8nx4gyf" path="res://assets/clouds/3.png" id="11_qktwf"]
 [ext_resource type="Texture2D" uid="uid://clvq16gwt3ess" path="res://assets/clouds/4.png" id="12_bh8nc"]
 [ext_resource type="AudioStream" uid="uid://mm8us1hrn341" path="res://assets/audio/oceanwaves.wav" id="13_2o6r5"]
-[ext_resource type="PackedScene" uid="uid://oo05xdye4s6t" path="res://hud.tscn" id="14_70uel"]
+[ext_resource type="PackedScene" uid="uid://oo05xdye4s6t" path="res://ui/hud.tscn" id="14_70uel"]
 [ext_resource type="AudioStream" uid="uid://co5kq8lwii7a4" path="res://assets/audio/splash.wav" id="14_bc84e"]
-[ext_resource type="PackedScene" uid="uid://b8v1imb3h0xdn" path="res://fish.tscn" id="15_il2jm"]
-[ext_resource type="PackedScene" uid="uid://dxmyktka707cg" path="res://buoy.tscn" id="17_bc84e"]
+[ext_resource type="PackedScene" uid="uid://b8v1imb3h0xdn" path="res://entities/fish/fish.tscn" id="15_il2jm"]
+[ext_resource type="PackedScene" uid="uid://dxmyktka707cg" path="res://entities/obstacles/buoy.tscn" id="17_bc84e"]
 [ext_resource type="Texture2D" uid="uid://dnwydna1rrls2" path="res://assets/ocean/surface/0.png" id="17_ryup7"]
-[ext_resource type="PackedScene" uid="uid://b5qwe8hurcxbe" path="res://rock.tscn" id="18_wukud"]
+[ext_resource type="PackedScene" uid="uid://b5qwe8hurcxbe" path="res://entities/obstacles/rock.tscn" id="18_wukud"]
 [ext_resource type="Texture2D" uid="uid://bfkltb6c071g2" path="res://assets/ocean/surface/1.png" id="18_ytpkv"]
 [ext_resource type="Texture2D" uid="uid://rmr8mfp30nn2" path="res://assets/ocean/surface/2.png" id="19_jas3d"]
 [ext_resource type="Texture2D" uid="uid://ws5l51d28a7" path="res://assets/ocean/surface/3.png" id="20_7htu6"]
 [ext_resource type="Texture2D" uid="uid://dbmuradsrp5ol" path="res://assets/ocean/shallow/0.png" id="21_7qk3m"]
-[ext_resource type="PackedScene" uid="uid://lphejilergf4" path="res://ship.tscn" id="21_o3ebs"]
+[ext_resource type="PackedScene" uid="uid://lphejilergf4" path="res://entities/obstacles/ship.tscn" id="21_o3ebs"]
 [ext_resource type="Texture2D" uid="uid://btrgvqv7d4d10" path="res://assets/ocean/shallow/1.png" id="22_xpnt2"]
 [ext_resource type="Texture2D" uid="uid://dgbprtydmo6j7" path="res://assets/ocean/shallow/2.png" id="23_ruyqm"]
 [ext_resource type="Texture2D" uid="uid://0f6wfbufjnk6" path="res://assets/ocean/shallow/3.png" id="24_fnoqa"]
@@ -39,7 +39,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tlwt5"]
 normal = Vector2(0, 1)
-distance = 93.0
+distance = 90.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqk2v"]
 
@@ -133,7 +133,6 @@ centered = false
 collision_layer = 2
 
 [node name="Top" type="CollisionShape2D" parent="WorldBoundaries"]
-position = Vector2(-1, -6)
 shape = SubResource("WorldBoundaryShape2D_tlwt5")
 
 [node name="Bottom" type="CollisionShape2D" parent="WorldBoundaries"]

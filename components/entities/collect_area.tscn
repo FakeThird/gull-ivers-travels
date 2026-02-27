@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgpaobvr22jw6"]
 
-[ext_resource type="Script" uid="uid://smspk8v5y4cv" path="res://collect_area.gd" id="1_7wb4t"]
+[ext_resource type="Script" uid="uid://smspk8v5y4cv" path="res://components/entities/collect_area.gd" id="1_7wb4t"]
 
 [node name="CollectArea" type="Area2D"]
 collision_layer = 0

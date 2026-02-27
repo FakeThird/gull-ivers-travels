@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8v1imb3h0xdn"]
 
-[ext_resource type="Script" uid="uid://bh7vg8oilir0n" path="res://fish.gd" id="1_xu20i"]
+[ext_resource type="Script" uid="uid://bh7vg8oilir0n" path="res://entities/fish/fish.gd" id="1_xu20i"]
 [ext_resource type="Texture2D" uid="uid://imfmvdve8six" path="res://assets/fish/0.png" id="2_6ik3a"]
-[ext_resource type="PackedScene" uid="uid://bgpaobvr22jw6" path="res://collect_area.tscn" id="2_hgn23"]
+[ext_resource type="PackedScene" uid="uid://bgpaobvr22jw6" path="res://components/entities/collect_area.tscn" id="2_hgn23"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oovoc"]
 animations = [{

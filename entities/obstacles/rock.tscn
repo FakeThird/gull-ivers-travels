@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://b5qwe8hurcxbe"]
 
-[ext_resource type="Script" uid="uid://cn1eufdbuuygh" path="res://rock.gd" id="1_wecdg"]
+[ext_resource type="Script" uid="uid://cn1eufdbuuygh" path="res://entities/obstacles/rock.gd" id="1_wecdg"]
 [ext_resource type="Texture2D" uid="uid://d2n7sfmwqavyn" path="res://assets/rock/0.png" id="2_wecdg"]
-[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://kill_area.tscn" id="3_o54ku"]
+[ext_resource type="PackedScene" uid="uid://bd8ornsc7t8lg" path="res://components/entities/kill_area.tscn" id="3_o54ku"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gtey5"]
 animations = [{
