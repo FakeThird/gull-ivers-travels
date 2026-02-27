@@ -6,10 +6,13 @@ class_name World
 @onready var hud = $HUD
 @onready var distance = $HUD/Distance
 
+var start_game = true
+
 func _ready() -> void:
 	GameEvents.player_killed.connect(_on_player_killed)
 	GameEvents.item_collected.connect(_on_item_collected)
-	hud.show_start()
+	hud.show_start(start_game)
+	start_game = false
 	
 func _input(event):
 	if player.current_state == player.PlayerState.DEAD:
@@ -23,7 +26,7 @@ func _on_player_killed(reason: Variant) -> void:
 	spawner.stop()
 	player.stop()
 	distance.stop()
-	hud.show_start()
+	hud.show_start(start_game)
 	print(reason)
 	
 func _on_item_collected(type: String, count: int, value: float) -> void:

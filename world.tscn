@@ -1,61 +1,86 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkvcno2k442a6"]
+[gd_scene load_steps=42 format=3 uid="uid://bkvcno2k442a6"]
 
 [ext_resource type="PackedScene" uid="uid://djecfjb5wt7sf" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://ddnifn0cphh3u" path="res://world.gd" id="1_fj7yv"]
-[ext_resource type="Texture2D" uid="uid://b4da280dbyo2g" path="res://assets/background/1.png" id="2_k3n1d"]
-[ext_resource type="Texture2D" uid="uid://do24j0sl70gnj" path="res://assets/background/2.png" id="3_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://d37m8018au24d" path="res://assets/background/6.png" id="2_bh8nc"]
+[ext_resource type="Texture2D" uid="uid://cnd45j2ivqbx0" path="res://assets/background/7.png" id="3_jjr1n"]
 [ext_resource type="Texture2D" uid="uid://bb1t87rd48noj" path="res://assets/background/3.png" id="4_70uel"]
 [ext_resource type="PackedScene" uid="uid://3gw0yro342k8" path="res://kill_zone.tscn" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://bg08v1qgmbhw" path="res://assets/background/8.png" id="4_gggvi"]
 [ext_resource type="PackedScene" uid="uid://j84gngqbsq0p" path="res://shark.tscn" id="5_036b0"]
-[ext_resource type="Texture2D" uid="uid://c0jcibhuqnigi" path="res://assets/background/4.png" id="5_hiqwa"]
-[ext_resource type="Texture2D" uid="uid://dl3ndnsecsdrx" path="res://assets/background/5.png" id="6_2u3nc"]
+[ext_resource type="Texture2D" uid="uid://5lh7wkek0xmb" path="res://assets/background/9.png" id="5_w44yn"]
 [ext_resource type="PackedScene" uid="uid://daylihhq0kjcp" path="res://follow_camera.tscn" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bhwigvbtrgv32" path="res://spawner.tscn" id="7_pkg7o"]
 [ext_resource type="AudioStream" uid="uid://fpagmd4cp85e" path="res://assets/audio/theme.wav" id="8_ikiii"]
-[ext_resource type="Texture2D" uid="uid://bpsr6fk403guj" path="res://assets/ocean/0.png" id="9_hiqwa"]
+[ext_resource type="Texture2D" uid="uid://dhvr3vd6q4d71" path="res://assets/clouds/1.png" id="9_o3ebs"]
 [ext_resource type="Script" uid="uid://c4wg6idntfu8s" path="res://sea.gd" id="10_26xuy"]
-[ext_resource type="Texture2D" uid="uid://bb67gx8kl2sh" path="res://assets/ocean/1.png" id="10_udxuc"]
-[ext_resource type="Texture2D" uid="uid://dbxp0okxsa0h5" path="res://assets/ocean/2.png" id="11_ikiii"]
+[ext_resource type="Texture2D" uid="uid://cduvni4grqp0u" path="res://assets/clouds/2.png" id="10_k83mh"]
+[ext_resource type="Texture2D" uid="uid://ca4q2v8nx4gyf" path="res://assets/clouds/3.png" id="11_qktwf"]
+[ext_resource type="Texture2D" uid="uid://clvq16gwt3ess" path="res://assets/clouds/4.png" id="12_bh8nc"]
 [ext_resource type="AudioStream" uid="uid://mm8us1hrn341" path="res://assets/audio/oceanwaves.wav" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oo05xdye4s6t" path="res://hud.tscn" id="14_70uel"]
 [ext_resource type="AudioStream" uid="uid://co5kq8lwii7a4" path="res://assets/audio/splash.wav" id="14_bc84e"]
 [ext_resource type="PackedScene" uid="uid://b8v1imb3h0xdn" path="res://fish.tscn" id="15_il2jm"]
 [ext_resource type="PackedScene" uid="uid://dxmyktka707cg" path="res://buoy.tscn" id="17_bc84e"]
+[ext_resource type="Texture2D" uid="uid://dnwydna1rrls2" path="res://assets/ocean/surface/0.png" id="17_ryup7"]
 [ext_resource type="PackedScene" uid="uid://b5qwe8hurcxbe" path="res://rock.tscn" id="18_wukud"]
+[ext_resource type="Texture2D" uid="uid://bfkltb6c071g2" path="res://assets/ocean/surface/1.png" id="18_ytpkv"]
+[ext_resource type="Texture2D" uid="uid://rmr8mfp30nn2" path="res://assets/ocean/surface/2.png" id="19_jas3d"]
+[ext_resource type="Texture2D" uid="uid://ws5l51d28a7" path="res://assets/ocean/surface/3.png" id="20_7htu6"]
+[ext_resource type="Texture2D" uid="uid://dbmuradsrp5ol" path="res://assets/ocean/shallow/0.png" id="21_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://lphejilergf4" path="res://ship.tscn" id="21_o3ebs"]
+[ext_resource type="Texture2D" uid="uid://btrgvqv7d4d10" path="res://assets/ocean/shallow/1.png" id="22_xpnt2"]
+[ext_resource type="Texture2D" uid="uid://dgbprtydmo6j7" path="res://assets/ocean/shallow/2.png" id="23_ruyqm"]
+[ext_resource type="Texture2D" uid="uid://0f6wfbufjnk6" path="res://assets/ocean/shallow/3.png" id="24_fnoqa"]
+[ext_resource type="Texture2D" uid="uid://bdcrgwt8ldo8n" path="res://assets/ocean/deep/0.png" id="25_nx736"]
+[ext_resource type="Texture2D" uid="uid://m45gplm4wukh" path="res://assets/ocean/deep/1.png" id="26_55kwu"]
+[ext_resource type="Texture2D" uid="uid://w0kkqbkkq0c7" path="res://assets/ocean/deep/2.png" id="27_f3o6s"]
+[ext_resource type="Texture2D" uid="uid://b7o3i1f8gjutm" path="res://assets/ocean/deep/3.png" id="28_w4lh7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tlwt5"]
 normal = Vector2(0, 1)
+distance = 93.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aqk2v"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_cbp6q"]
-frames = 3
-speed_scale = 6.0
-frame_0/texture = ExtResource("9_hiqwa")
+frames = 4
+speed_scale = 4.0
+frame_0/texture = ExtResource("17_ryup7")
 frame_0/duration = 2.0
-frame_1/texture = ExtResource("10_udxuc")
+frame_1/texture = ExtResource("18_ytpkv")
 frame_1/duration = 2.0
-frame_2/texture = ExtResource("11_ikiii")
+frame_2/texture = ExtResource("19_jas3d")
 frame_2/duration = 2.0
+frame_3/texture = ExtResource("20_7htu6")
+frame_3/duration = 2.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_k3lar"]
+frames = 4
+speed_scale = 4.0
+frame_0/texture = ExtResource("21_7qk3m")
+frame_0/duration = 2.0
+frame_1/texture = ExtResource("22_xpnt2")
+frame_1/duration = 2.0
+frame_2/texture = ExtResource("23_ruyqm")
+frame_2/duration = 2.0
+frame_3/texture = ExtResource("24_fnoqa")
+frame_3/duration = 2.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_olr1q"]
+frames = 4
+speed_scale = 4.0
+frame_0/texture = ExtResource("25_nx736")
+frame_0/duration = 2.0
+frame_1/texture = ExtResource("26_55kwu")
+frame_1/duration = 2.0
+frame_2/texture = ExtResource("27_f3o6s")
+frame_2/duration = 2.0
+frame_3/texture = ExtResource("28_w4lh7")
+frame_3/duration = 2.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_fj7yv")
-
-[node name="SampleBackground" type="Parallax2D" parent="."]
-repeat_size = Vector2(1080, 0)
-
-[node name="Atmosphere" type="ColorRect" parent="SampleBackground"]
-offset_right = 1080.0
-offset_bottom = 720.0
-color = Color(0, 0.70980394, 1, 1)
-
-[node name="Sun" type="ColorRect" parent="SampleBackground"]
-offset_left = 490.0
-offset_top = 310.0
-offset_right = 590.0
-offset_bottom = 410.0
-color = Color(1, 0.75686276, 0, 1)
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -64,50 +89,51 @@ scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(1080, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/SkyLayer"]
-scale = Vector2(1.875, 2.222222)
-texture = ExtResource("2_k3n1d")
+scale = Vector2(1.875, 2)
+texture = ExtResource("2_bh8nc")
 centered = false
 
 [node name="BackLayer" type="Parallax2D" parent="Background"]
-scroll_scale = Vector2(0.1, 0.1)
+scroll_scale = Vector2(0.04, 0.04)
 repeat_size = Vector2(1080, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/BackLayer"]
-scale = Vector2(1.8749999, 2.222222)
-texture = ExtResource("3_2o6r5")
+[node name="Sprite2D2" type="Sprite2D" parent="Background/BackLayer"]
+scale = Vector2(1.875, 2)
+texture = ExtResource("3_jjr1n")
 centered = false
 
 [node name="MiddleLayer1" type="Parallax2D" parent="Background"]
-scroll_scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.07, 0.07)
 repeat_size = Vector2(1080, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/MiddleLayer1"]
-scale = Vector2(1.875, 2.2222223)
-texture = ExtResource("4_70uel")
+[node name="Sprite2D3" type="Sprite2D" parent="Background/MiddleLayer1"]
+scale = Vector2(1.875, 2)
+texture = ExtResource("4_gggvi")
 centered = false
 
 [node name="MiddleLayer2" type="Parallax2D" parent="Background"]
-scroll_scale = Vector2(0.4, 0.4)
+scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1080, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/MiddleLayer2"]
-scale = Vector2(1.875, 2.222222)
-texture = ExtResource("5_hiqwa")
+[node name="Sprite2D4" type="Sprite2D" parent="Background/MiddleLayer2"]
+scale = Vector2(1.875, 2)
+texture = ExtResource("5_w44yn")
 centered = false
 
 [node name="FrontLayer" type="Parallax2D" parent="Background"]
-scroll_scale = Vector2(0.7, 0.7)
+scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1080, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/FrontLayer"]
-scale = Vector2(1.8750001, 2.222222)
-texture = ExtResource("6_2u3nc")
+[node name="Sprite2D2" type="Sprite2D" parent="Background/FrontLayer"]
+scale = Vector2(1.875, 2.2222223)
+texture = ExtResource("4_70uel")
 centered = false
 
 [node name="WorldBoundaries" type="StaticBody2D" parent="."]
 collision_layer = 2
 
 [node name="Top" type="CollisionShape2D" parent="WorldBoundaries"]
+position = Vector2(-1, -6)
 shape = SubResource("WorldBoundaryShape2D_tlwt5")
 
 [node name="Bottom" type="CollisionShape2D" parent="WorldBoundaries"]
@@ -117,18 +143,56 @@ shape = SubResource("WorldBoundaryShape2D_aqk2v")
 [node name="Sky" parent="." instance=ExtResource("4_aqk2v")]
 
 [node name="Parallax2D" parent="Sky" index="0"]
+scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1080, 0)
 
-[node name="ColorRect" type="ColorRect" parent="Sky/Parallax2D" index="0"]
-offset_right = 1080.0
-offset_bottom = 205.0
-color = Color(0.5411765, 0.84313726, 1, 0.39215687)
+[node name="TextureRect2" type="TextureRect" parent="Sky/Parallax2D" index="0"]
+offset_right = 480.0
+offset_bottom = 120.0
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("9_o3ebs")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="KillArea" parent="Sky" index="1"]
 position = Vector2(0, 205)
 rotation = 3.1415927
 reason = "Sky Kill Area"
 export_timer = true
+
+[node name="Parallax2D2" type="Parallax2D" parent="Sky"]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1080, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Sky/Parallax2D2"]
+offset_right = 480.0
+offset_bottom = 120.0
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("10_k83mh")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D3" type="Parallax2D" parent="Sky"]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(1080, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Sky/Parallax2D3"]
+offset_right = 480.0
+offset_bottom = 120.0
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("11_qktwf")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D4" type="Parallax2D" parent="Sky"]
+repeat_size = Vector2(1080, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Sky/Parallax2D4"]
+offset_right = 480.0
+offset_bottom = 120.0
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("12_bh8nc")
+stretch_mode = 1
 
 [node name="Sea" parent="." node_paths=PackedStringArray("splash") instance=ExtResource("4_aqk2v")]
 visibility_layer = 2
@@ -141,20 +205,13 @@ splash = NodePath("../FollowCamera/Splash")
 [node name="Parallax2D" parent="Sea" index="0"]
 repeat_size = Vector2(1080, 0)
 
-[node name="ColorRect" type="ColorRect" parent="Sea/Parallax2D" index="0"]
+[node name="TextureRect" type="TextureRect" parent="Sea/Parallax2D" index="0"]
 modulate = Color(1, 1, 1, 0.7058824)
 self_modulate = Color(1, 1, 1, 0.7058824)
-offset_top = -85.0
-offset_right = 1080.0
-color = Color(0.3372549, 0.34509805, 0.48235294, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Sea/Parallax2D" index="1"]
-modulate = Color(1, 1, 1, 0.7058824)
-self_modulate = Color(1, 1, 1, 0.7058824)
-offset_top = -165.0
-offset_right = 431.99997
-offset_bottom = -133.0
-scale = Vector2(2.5, 2.5)
+offset_top = -164.0
+offset_right = 629.7376
+offset_bottom = -132.0
+scale = Vector2(1.715, 1.715)
 texture = SubResource("AnimatedTexture_cbp6q")
 stretch_mode = 1
 
@@ -163,6 +220,36 @@ position = Vector2(0, -160)
 wait_time = 3.0
 reason = "Sea Kill Area"
 export_timer = true
+
+[node name="CollisionShape2D" parent="Sea/KillArea" index="0"]
+position = Vector2(0, -3)
+
+[node name="Parallax2D2" type="Parallax2D" parent="Sea"]
+repeat_size = Vector2(1080, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Sea/Parallax2D2"]
+modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.7058824)
+offset_left = 2.0
+offset_top = -54.0
+offset_right = 631.738
+offset_bottom = -22.0
+scale = Vector2(1.715, 1.715)
+texture = SubResource("AnimatedTexture_k3lar")
+stretch_mode = 1
+
+[node name="Parallax2D3" type="Parallax2D" parent="Sea"]
+repeat_size = Vector2(1080, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Sea/Parallax2D3"]
+modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.7058824)
+offset_top = -109.0
+offset_right = 629.738
+offset_bottom = -77.0
+scale = Vector2(1.715, 1.715)
+texture = SubResource("AnimatedTexture_olr1q")
+stretch_mode = 1
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_f3sb7")]
 position = Vector2(100, 360)

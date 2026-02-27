@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb67gx8kl2sh"
-path="res://.godot/imported/1.png-90f99d6d59b25e503b40112fca872325.ctex"
+uid="uid://clvq16gwt3ess"
+path="res://.godot/imported/4.png-522932a56ef6dbb1cbe6228c544ab8c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ocean/1.png"
-dest_files=["res://.godot/imported/1.png-90f99d6d59b25e503b40112fca872325.ctex"]
+source_file="res://assets/clouds/4.png"
+dest_files=["res://.godot/imported/4.png-522932a56ef6dbb1cbe6228c544ab8c0.ctex"]
 
 [params]
 
