@@ -5,6 +5,7 @@
 - [Pixabay](https://pixabay.com/) - Free Sound effects
 
 ## More Sprites 
+- Ellie Ladrido-Luison - Seagull Asset
 - [Zacchary Dempsey-Plante](https://www.dafont.com/pixellari.font) - Font used
 - [Gowl](https://gowldev.itch.io/health-stamina-bar-pixel-art) - Stamina Bar Assets and Base
 - [Jan Elijo](https://jan-elijo.itch.io/cloudy-pack) - Clouds

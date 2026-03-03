@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 
 func start() -> void:
 	time_elapsed = 0
+	milestones_reached = 0
 	set_process(true)
 
 func stop() -> void:

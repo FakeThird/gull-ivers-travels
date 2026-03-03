@@ -27,6 +27,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if stats.current_weight > 100:
 		body_sprite.scale.y = -(((stats.current_weight - 100.0) / 50.0) + 1.0)
+	elif stats.current_weight <= 50:
+		body_sprite.scale.y = -((stats.current_weight / 100.0) + 0.5)
 	else:
 		body_sprite.scale.y = -1
 	

@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4q2v8nx4gyf" path="res://assets/clouds/3.png" id="11_qktwf"]
 [ext_resource type="Texture2D" uid="uid://clvq16gwt3ess" path="res://assets/clouds/4.png" id="12_bh8nc"]
 [ext_resource type="AudioStream" uid="uid://mm8us1hrn341" path="res://assets/audio/oceanwaves.wav" id="13_2o6r5"]
-[ext_resource type="PackedScene" uid="uid://oo05xdye4s6t" path="res://ui/hud.tscn" id="14_70uel"]
+[ext_resource type="PackedScene" uid="uid://oo05xdye4s6t" path="res://global/hud.tscn" id="14_70uel"]
 [ext_resource type="AudioStream" uid="uid://co5kq8lwii7a4" path="res://assets/audio/splash.wav" id="14_bc84e"]
 [ext_resource type="PackedScene" uid="uid://b8v1imb3h0xdn" path="res://entities/fish/fish.tscn" id="15_il2jm"]
 [ext_resource type="PackedScene" uid="uid://dxmyktka707cg" path="res://entities/obstacles/buoy.tscn" id="17_bc84e"]

@@ -1,50 +1,50 @@
 [gd_scene load_steps=33 format=3 uid="uid://oo05xdye4s6t"]
 
-[ext_resource type="FontFile" uid="uid://ccp68wpm6jlts" path="res://assets/font/Pixellari.ttf" id="1_37p78"]
-[ext_resource type="Script" uid="uid://cgwd27w5nddx2" path="res://ui/hud.gd" id="1_64ctp"]
-[ext_resource type="Script" uid="uid://4duau1en7jqo" path="res://ui/distance.gd" id="3_8sq4i"]
-[ext_resource type="AudioStream" uid="uid://drxgreou5f7d2" path="res://assets/audio/milestone1.wav" id="4_1xsix"]
-[ext_resource type="AudioStream" uid="uid://b0wbuuk0pncgr" path="res://assets/audio/milestone2.wav" id="5_rftc2"]
-[ext_resource type="AudioStream" uid="uid://c4ad0bdondg3k" path="res://assets/audio/milestone3.wav" id="6_61f8s"]
-[ext_resource type="Script" uid="uid://b6khfnqpcrhji" path="res://ui/oxygen.gd" id="7_4u2vk"]
-[ext_resource type="Texture2D" uid="uid://bw7rdx2popnp1" path="res://assets/player_stats/background.png" id="7_g10ll"]
-[ext_resource type="Texture2D" uid="uid://cbrvyg4jsvj7b" path="res://assets/player_stats/frame.png" id="8_gpiub"]
-[ext_resource type="Texture2D" uid="uid://cn83wh5ndv0nu" path="res://assets/player_stats/stamina.png" id="9_amv7k"]
-[ext_resource type="Script" uid="uid://db7g16ce4riig" path="res://ui/stats.gd" id="10_gpiub"]
-[ext_resource type="Resource" uid="uid://bi5eyb4uavcrs" path="res://global/player_stats.tres" id="11_amv7k"]
-[ext_resource type="Script" uid="uid://btmf4e6vc5qwx" path="res://ui/weight.gd" id="12_1fv7p"]
-[ext_resource type="Texture2D" uid="uid://xyctpwq31t" path="res://assets/player_stats/oxygen.png" id="12_4q17s"]
-[ext_resource type="Texture2D" uid="uid://cm3jjx1pptgc6" path="res://assets/player_stats/eagle.png" id="14_2d608"]
-[ext_resource type="Script" uid="uid://5rtjjw0qbaww" path="res://ui/survival.gd" id="15_w71nf"]
-[ext_resource type="Texture2D" uid="uid://chc535m8xpold" path="res://assets/eagle/0.png" id="16_5iihh"]
-[ext_resource type="Texture2D" uid="uid://7eds4s11ic6x" path="res://assets/eagle/1.png" id="17_rgb5v"]
-[ext_resource type="Texture2D" uid="uid://baw4d318sroey" path="res://assets/eagle/2.png" id="18_np8ax"]
-[ext_resource type="Texture2D" uid="uid://dqk28bbv5i1ja" path="res://assets/eagle/3.png" id="19_8w6vd"]
-[ext_resource type="Texture2D" uid="uid://cilunn13prik0" path="res://assets/eagle/4.png" id="20_shnbk"]
-[ext_resource type="Texture2D" uid="uid://3g7bkjgt4kj" path="res://assets/eagle/5.png" id="21_o2hcl"]
-[ext_resource type="AudioStream" uid="uid://cdic474i7ioa3" path="res://assets/audio/eagle.wav" id="22_rgb5v"]
+[ext_resource type="Script" uid="uid://cgwd27w5nddx2" path="res://ui/hud.gd" id="1_6bu52"]
+[ext_resource type="FontFile" uid="uid://ccp68wpm6jlts" path="res://assets/font/Pixellari.ttf" id="2_g3cdn"]
+[ext_resource type="Script" uid="uid://4duau1en7jqo" path="res://ui/distance.gd" id="3_688py"]
+[ext_resource type="AudioStream" uid="uid://drxgreou5f7d2" path="res://assets/audio/milestone1.wav" id="4_vuu26"]
+[ext_resource type="AudioStream" uid="uid://b0wbuuk0pncgr" path="res://assets/audio/milestone2.wav" id="5_xcybc"]
+[ext_resource type="AudioStream" uid="uid://c4ad0bdondg3k" path="res://assets/audio/milestone3.wav" id="6_b2in0"]
+[ext_resource type="Texture2D" uid="uid://bw7rdx2popnp1" path="res://assets/player_stats/background.png" id="7_t6etl"]
+[ext_resource type="Texture2D" uid="uid://cbrvyg4jsvj7b" path="res://assets/player_stats/frame.png" id="8_7ivrx"]
+[ext_resource type="Texture2D" uid="uid://cn83wh5ndv0nu" path="res://assets/player_stats/stamina.png" id="9_cwnuw"]
+[ext_resource type="Script" uid="uid://db7g16ce4riig" path="res://ui/stats.gd" id="10_7wrac"]
+[ext_resource type="Resource" uid="uid://bi5eyb4uavcrs" path="res://global/player_stats.tres" id="11_dq3ka"]
+[ext_resource type="Texture2D" uid="uid://xyctpwq31t" path="res://assets/player_stats/oxygen.png" id="12_ta8ra"]
+[ext_resource type="Script" uid="uid://b6khfnqpcrhji" path="res://ui/oxygen.gd" id="13_7fr5g"]
+[ext_resource type="Texture2D" uid="uid://cm3jjx1pptgc6" path="res://assets/player_stats/eagle.png" id="14_lhn0h"]
+[ext_resource type="Script" uid="uid://5rtjjw0qbaww" path="res://ui/survival.gd" id="15_q1bv6"]
+[ext_resource type="Texture2D" uid="uid://chc535m8xpold" path="res://assets/eagle/0.png" id="16_wmsj4"]
+[ext_resource type="Texture2D" uid="uid://7eds4s11ic6x" path="res://assets/eagle/1.png" id="17_ca6u4"]
+[ext_resource type="Texture2D" uid="uid://baw4d318sroey" path="res://assets/eagle/2.png" id="18_oogbt"]
+[ext_resource type="Texture2D" uid="uid://dqk28bbv5i1ja" path="res://assets/eagle/3.png" id="19_4cts7"]
+[ext_resource type="Texture2D" uid="uid://cilunn13prik0" path="res://assets/eagle/4.png" id="20_p3sud"]
+[ext_resource type="Texture2D" uid="uid://3g7bkjgt4kj" path="res://assets/eagle/5.png" id="21_w0npo"]
+[ext_resource type="AudioStream" uid="uid://cdic474i7ioa3" path="res://assets/audio/eagle.wav" id="22_vbrxw"]
+[ext_resource type="Script" uid="uid://btmf4e6vc5qwx" path="res://ui/weight.gd" id="23_vamqr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
-font = ExtResource("1_37p78")
+font = ExtResource("2_g3cdn")
 font_size = 32
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g10ll"]
 streams_count = 3
-stream_0/stream = ExtResource("4_1xsix")
-stream_1/stream = ExtResource("5_rftc2")
-stream_2/stream = ExtResource("6_61f8s")
+stream_0/stream = ExtResource("4_vuu26")
+stream_1/stream = ExtResource("5_xcybc")
+stream_2/stream = ExtResource("6_b2in0")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8sq4i"]
-font = ExtResource("1_37p78")
+font = ExtResource("2_g3cdn")
 font_size = 48
 font_color = Color(1, 0.8039216, 0.2901961, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_640wx"]
-font = ExtResource("1_37p78")
+font = ExtResource("2_g3cdn")
 font_size = 24
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -53,22 +53,22 @@ outline_color = Color(0, 0, 0, 1)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_5iihh")
+"texture": ExtResource("16_wmsj4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_rgb5v")
+"texture": ExtResource("17_ca6u4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_np8ax")
+"texture": ExtResource("18_oogbt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_8w6vd")
+"texture": ExtResource("19_4cts7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_shnbk")
+"texture": ExtResource("20_p3sud")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_o2hcl")
+"texture": ExtResource("21_w0npo")
 }],
 "loop": true,
 "name": &"default",
@@ -113,13 +113,13 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_4u2vk"]
-font = ExtResource("1_37p78")
+font = ExtResource("2_g3cdn")
 font_size = 24
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_64ctp")
+script = ExtResource("1_6bu52")
 
 [node name="Distance" type="Label" parent="."]
 anchors_preset = 1
@@ -133,7 +133,7 @@ grow_horizontal = 0
 text = "0m"
 label_settings = SubResource("LabelSettings_64ctp")
 horizontal_alignment = 1
-script = ExtResource("3_8sq4i")
+script = ExtResource("3_688py")
 
 [node name="Milestone" type="AudioStreamPlayer" parent="Distance"]
 stream = SubResource("AudioStreamRandomizer_g10ll")
@@ -174,12 +174,12 @@ offset_top = 20.0
 offset_right = 132.0
 offset_bottom = 60.0
 scale = Vector2(4, 4)
-texture_under = ExtResource("7_g10ll")
-texture_over = ExtResource("8_gpiub")
-texture_progress = ExtResource("9_amv7k")
+texture_under = ExtResource("7_t6etl")
+texture_over = ExtResource("8_7ivrx")
+texture_progress = ExtResource("9_cwnuw")
 texture_progress_offset = Vector2(20, 6)
-script = ExtResource("10_gpiub")
-stats = ExtResource("11_amv7k")
+script = ExtResource("10_7wrac")
+stats = ExtResource("11_dq3ka")
 
 [node name="Oxygen" type="TextureProgressBar" parent="."]
 anchors_preset = 1
@@ -192,9 +192,9 @@ offset_bottom = 51.0
 grow_horizontal = 0
 scale = Vector2(4, 4)
 step = 25.0
-texture_progress = ExtResource("12_4q17s")
+texture_progress = ExtResource("12_ta8ra")
 texture_progress_offset = Vector2(50, 0)
-script = ExtResource("7_4u2vk")
+script = ExtResource("13_7fr5g")
 
 [node name="Survival" type="TextureProgressBar" parent="."]
 anchors_preset = 1
@@ -207,9 +207,9 @@ offset_bottom = 54.0
 grow_horizontal = 0
 scale = Vector2(4, 4)
 step = 25.0
-texture_progress = ExtResource("14_2d608")
+texture_progress = ExtResource("14_lhn0h")
 texture_progress_offset = Vector2(50, 0)
-script = ExtResource("15_w71nf")
+script = ExtResource("15_q1bv6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Survival"]
 position = Vector2(285, 20)
@@ -227,7 +227,7 @@ libraries = {
 }
 
 [node name="Cry" type="AudioStreamPlayer" parent="Survival"]
-stream = ExtResource("22_rgb5v")
+stream = ExtResource("22_vbrxw")
 volume_db = 10.0
 
 [node name="Weight" type="Label" parent="."]
@@ -237,5 +237,5 @@ offset_right = 229.0
 offset_bottom = 99.0
 label_settings = SubResource("LabelSettings_4u2vk")
 horizontal_alignment = 2
-script = ExtResource("12_1fv7p")
-stats = ExtResource("11_amv7k")
+script = ExtResource("23_vamqr")
+stats = ExtResource("11_dq3ka")

@@ -16,8 +16,8 @@ var last_spawn_x: float = 0.0
 var next_interval: float = 300.0
 
 var weights = {
-	"fish": 0.50,
-	"shark": 0.35,
+	"fish": 0.60,
+	"shark": 0.25,
 	"buoy": 0.10,
 	"rock": 0.04,
 	"ship": 0.01

@@ -3,7 +3,7 @@ extends Label
 @export var stats: PlayerStats
 
 func _process(delta: float) -> void:
-	text = "%dkg" % (stats.current_weight)
+	text = "%dg" % (stats.current_weight)
 	if stats.current_weight > 200:
 		label_settings.font_color = Color("f31400")
 	elif stats.current_weight > 150:

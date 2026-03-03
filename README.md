@@ -60,7 +60,6 @@ There might be more implementations and mechanics in future updates so stay tune
 As the player, you can only interact with the game using the `spacebar`, although if the user prefers a `mouse` can be used to click the button in the title screen to start the game. Each `spacebar` input either makes Iver flap one time or interacts with the HUD to restart the game. 
 
 # Limitations and Issues
-- **(UI) Fixed screen size:** As the UI is not dynamic, adjusting the screen size might give some visual problems but overall no game breaking bugs were found.
 - **(Game) Unoptimized collision shapes:** Multiple Rectangle Collision shapes were used instead of a singular Polygonal Collision shape.
 - **(Audio) Repeated sounds upon player death:** Collision happens twice when the player has been hit from a shark going up and down causing a repeat of death sounds.
 
