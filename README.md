@@ -1,6 +1,7 @@
 # About `gull-ivers-travels`
 
-![Gif that shows the title screen art](https://github.com/user-attachments/assets/460e4cad-d0e0-4c27-ac4f-3597c85cffb4) ![Gif that shows a quick gameplay](https://github.com/user-attachments/assets/5cb1ab39-54cb-45aa-bd6b-dab586d96732)
+<img src="https://github.com/user-attachments/assets/460e4cad-d0e0-4c27-ac4f-3597c85cffb4" width="48%">
+<img src="https://github.com/user-attachments/assets/5cb1ab39-54cb-45aa-bd6b-dab586d96732" width="48%">
 
 # Creator
 - Keith Ashly M. Domingo
